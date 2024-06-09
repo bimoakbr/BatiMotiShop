@@ -1,0 +1,34 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id Int  @id @default(autoincrement())
+  nama String @db.VarChar(255)
+  email String @unique
+  password String
+  phoneNumber String
+  address String
+}
+
+model Produk {
+  id Int @id @default(autoincrement())
+  namaProduk String @db.VarChar(255)
+  harga Int
+  deskripsi String @db.Text
+  kategori String @db.VarChar(255)
+  gambar String @db.VarChar(255)
+  kuantitas Int
+  merek String
+}
