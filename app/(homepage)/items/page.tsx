@@ -1,9 +1,13 @@
+
 import { db } from "@/lib/db";
 import { CardItems } from "./_components/card-items";
+
 
 export default async function page(){
 
     const produk = await db.produk.findMany()
+ 
+  
     console.log(produk);
     return(
         <section className="items" id="items">

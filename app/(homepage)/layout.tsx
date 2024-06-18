@@ -3,12 +3,13 @@ import { Inter, Nunito } from "next/font/google";
 import "../globals.css";
 import { Navbar } from "../_componets/navbar";
 import Footer from "../_componets/footer";
-import { SessionProvider } from "next-auth/react";
-import { Providers } from "../_componets/providers";
+import SessionProviders from "../_componets/providers"
+
 import { getServerSession } from "next-auth";
 import { options } from "../api/auth/[...nextauth]/route";
+import StoreProvider from "./StoreProvider";
+import { Toaster } from "react-hot-toast";
 
-const inter = Inter({ subsets: ["latin"] });
 const nunito = Nunito({
   weight: ["200", "300", "400", "500", "600", "700"],
   subsets:["latin"]
@@ -25,18 +26,26 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const session = await getServerSession(options);
+
   return (
     <html lang="en">
       <head>
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
       </head>
-      <Providers session={session!}>
       <body className={nunito.className}>
-        <Navbar/>
-        {children}
-        <Footer/>
+      <SessionProviders session={session}>
+
+        <StoreProvider>
+
+          <Navbar/>
+          <Toaster/>
+          {children}
+          <Footer/>
+        </StoreProvider>
+
+    
+      </SessionProviders>
         </body>
-      </Providers>
     </html>
   );
 }

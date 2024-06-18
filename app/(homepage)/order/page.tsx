@@ -1,6 +1,16 @@
+"use client"
 import Image from "next/image";
+import { useSession} from "next-auth/react"
+import { redirect } from 'next/navigation'
 
 const orderPage = () => {
+
+  const { data: session} = useSession()
+
+  if (!session) {
+    redirect('/')
+ }
+
   return (
     <div className="bg-gray-100 py-8 mb-90">
       <div className="container mx-auto mt-[90px] px-4">

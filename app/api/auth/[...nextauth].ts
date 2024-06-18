@@ -59,14 +59,23 @@ export default async function auth(req: NextApiRequest, res: NextApiResponse) {
     callbacks: {
         jwt: async ({ token, user }) => {
             if (user) {
-                token.user = user
+              token.id = user.id
+              token.email = user.email
+              token.address = user.address
+              token.phoneNumber = user.phoneNumber
+              token.name = user.name
             }
       
             return token;
           },
           session: ({ session, token, user }) => {
             if (token) {
-                session.user = token.user!
+                session.user.id = token.id as Number
+                session.user.address = token.address as string
+                session.user.email = token.email 
+                session.user.phoneNumber = token.phoneNumber as string
+                session.user.name = token.name 
+                session.user.image = token.picture
             }
             return session;
           },

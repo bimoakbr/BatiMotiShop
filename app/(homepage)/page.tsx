@@ -1,4 +1,4 @@
-"use client"
+
 import { db } from "@/lib/db";
 import { CardItems } from "./items/_components/card-items";
 import { CarouselHome } from "./items/_components/carousel-home";

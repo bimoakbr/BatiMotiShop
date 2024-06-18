@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Nunito } from "next/font/google";
-import { SessionProvider } from "next-auth/react";
+
 import "../globals.css"
-import { Providers } from "../_componets/providers";
+import SessionProviders from "../_componets/providers";
 import { getServerSession } from "next-auth";
 import { options } from "../api/auth/[...nextauth]/route";
 
@@ -26,9 +26,9 @@ export default async function RootLayout({
       <body className={nunito.className}>
      
         <main className="auth-body">
-        <Providers session={session!}>
+        <SessionProviders session={session}>
            {children}
-        </Providers>
+        </SessionProviders >
         </main>
         </body>
 

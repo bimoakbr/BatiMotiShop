@@ -3,6 +3,7 @@ import { Produk } from "@prisma/client"
 import { formatRupiah } from "@/lib/format"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
+import Link from "next/link"
 
 
 
@@ -14,7 +15,8 @@ export const CardItems = ({produk} : {produk: Produk}) => {
                 <Image src={produk.gambar} alt="" width={100} height={100} unoptimized/>
                 <h3>{produk.namaProduk}</h3>
                 <span>{formatRupiah(produk.harga)}</span>
-                <a href="#" className="btn">tambah ke keranjang</a>
+
+                <Link href={`/items/${produk.id}`} className="btn">tambah ke keranjang</Link>
             </div>
     ) 
 }

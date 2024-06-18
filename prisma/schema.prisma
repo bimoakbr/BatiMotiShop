@@ -20,6 +20,7 @@ model User {
   password String
   phoneNumber String
   address String
+  cart CartItems[]
 }
 
 model Produk {
@@ -31,4 +32,14 @@ model Produk {
   gambar String @db.VarChar(255)
   kuantitas Int
   merek String
+  CartItems CartItems[]
+}
+
+model CartItems {
+   id Int @id @default(autoincrement())
+   productID Int
+   userID Int
+   total Int
+   user User @relation(fields: [userID], references: [id], onDelete: Cascade )
+   product Produk @relation(fields: [productID], references: [id], onDelete: Cascade)
 }
