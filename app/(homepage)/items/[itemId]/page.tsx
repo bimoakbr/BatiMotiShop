@@ -72,7 +72,7 @@ export default function page({params}:ItemsPageProps) {
                 <input type="number" id="quantity" name="quantity" min="0" max="100" className="text-[14px]"/><br/>
                 <p>Merek : {produk?.merek}</p>
                 <div className="flex gap-4 items-center text-[14px] text-slate-600">Ketersediaan : {productTersedia ? <div className="bg-red-400 text-white p-2 rounded-lg text-[12px]">Tidak Tersedia</div>: <div className="bg-emerald-400 rounded-lg text-white p-2 text-[12px] w-fit">Tersedia</div>} </div>
-                <button type="submit" className="btn">memesan</button>
+                <button type="submit" className="btn">Pesan</button>
             </form>
         </div>
  

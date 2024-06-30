@@ -15,8 +15,8 @@ export const CardItems = ({produk} : {produk: Produk}) => {
                 <Image src={produk.gambar} alt="" width={100} height={100} unoptimized/>
                 <h3>{produk.namaProduk}</h3>
                 <span>{formatRupiah(produk.harga)}</span>
-
-                <Link href={`/items/${produk.id}`} className="btn">tambah ke keranjang</Link>
+                <br />
+                <Link href={`/items/${produk.id}`} className="btn">Buat Pesanan</Link>
             </div>
     ) 
 }

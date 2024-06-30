@@ -50,13 +50,14 @@ export const options: NextAuthOptions = {
         
                       const user = await res.json()
                       
-                        const { nama, id, address, phoneNumber,email} = user?.data;
+                        const { nama, id, address, phoneNumber,email, role} = user?.data;
                         const userData = {
                           id,
                           name: nama,
                           phoneNumber,
                           address,
                           email,
+                          role
                         };
                       return userData
                     

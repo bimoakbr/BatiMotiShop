@@ -1,5 +1,6 @@
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
+import { RoleUser } from "@prisma/client";
 
 
 export async function POST(request : Request) {
@@ -12,7 +13,8 @@ export async function POST(request : Request) {
                 email,
                 password,
                 phoneNumber: phone_number,
-                address
+                address,
+                role: RoleUser.USER
             }
         })
 

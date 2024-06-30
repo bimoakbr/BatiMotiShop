@@ -44,7 +44,7 @@ export const CarouselHome = ({data} : {data : Produk[]}) => {
                 <span className="font-semibold">frozen food</span>
                 <h3 className="font-bold">{produk.namaProduk}</h3>
                 <p>{produk.deskripsi}</p>
-                <a href="#" className="btn">memesan</a>
+                <a href="#" className="btn">Buat Pesanan</a>
             </div>
             <div className="image">
                 <Image src={produk.gambar} alt="" width={100} height={100} unoptimized/>

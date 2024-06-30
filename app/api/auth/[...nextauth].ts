@@ -27,13 +27,14 @@ export default async function auth(req: NextApiRequest, res: NextApiResponse) {
 
               const user = await res.json()
               if (res.status === 200 && user) {
-                const { nama, id, address, phoneNumber,email} = user?.data.data;
+                const { nama, id, address, phoneNumber,email, role} = user?.data.data;
                 const userData = {
                   id,
                   name: nama,
                   phoneNumber,
                   address,
                   email,
+                  role
             };
               return userData
             }
@@ -64,6 +65,7 @@ export default async function auth(req: NextApiRequest, res: NextApiResponse) {
               token.address = user.address
               token.phoneNumber = user.phoneNumber
               token.name = user.name
+              token.role = user.role 
             }
       
             return token;
@@ -76,6 +78,7 @@ export default async function auth(req: NextApiRequest, res: NextApiResponse) {
                 session.user.phoneNumber = token.phoneNumber as string
                 session.user.name = token.name 
                 session.user.image = token.picture
+                session.user.role = token.role as string
             }
             return session;
           },

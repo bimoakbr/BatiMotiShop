@@ -20,6 +20,7 @@ model User {
   password String
   phoneNumber String
   address String
+  role RoleUser
   cart CartItems[]
 }
 
@@ -42,4 +43,9 @@ model CartItems {
    total Int
    user User @relation(fields: [userID], references: [id], onDelete: Cascade )
    product Produk @relation(fields: [productID], references: [id], onDelete: Cascade)
+}
+
+enum RoleUser {
+  ADMIN
+  USER
 }

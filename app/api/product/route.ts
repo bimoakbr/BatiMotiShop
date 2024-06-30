@@ -34,6 +34,4 @@ export async function POST(request : Request) {
         console.log("Error occured ", error);
         return NextResponse.json({ Message: "Failed", status: 500 });
       }
-
-
 }

@@ -43,7 +43,7 @@ export const Navbar = () => {
         <>
         
         <header>
-    <Link href="/" className="logo"><i className='bx bxs-bowl-hot' ></i>BatiMotiShop.</Link>
+    <Link href="/" className="logo"><i className='bx bx-store' ></i>BatiMotiShop</Link>
     <nav className="navbar">
         <Link className={pathname === "/" ? `active` : ""} href="/">home</Link>
         <Link className={pathname === "/items" ? `active` : ""} href="/items">Items</Link>
@@ -54,7 +54,7 @@ export const Navbar = () => {
 
 {session ? <div className="icons flex">
     <i className='bx bx-menu' id="menu-bars"></i>
-    <i className='bx bx-search-alt-2' id="search-icon" onClick={() => console.log(cart)}></i>
+    {/* <i className='bx bx-search-alt-2' id="search-icon" onClick={() => console.log(cart)}></i> */}
     <div className="relative">
         <i className='bx bx-cart' onClick={()=>router.push('/keranjang')}></i>
         {totaltemInCart() <= 0 ? null : <div className='absolute right-[-5px] top-[-5px] w-[25px] h-[25px] bg-[#27ae60] text-white rounded-full flex items-center justify-center text-sm transition-all '>{totaltemInCart()}</div>}

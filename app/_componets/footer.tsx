@@ -21,9 +21,9 @@ export default function Footer(){
 
         <div className="box">
             <h3 className="font-bold">contact info</h3>
-            <a href="#">0895-1034-5014</a>
-            <a href="#">b1mo4kbar@gmail.com</a>
-            <a href="#">jakarta, indonesia - 13790</a>
+            <p>0895-1034-5014</p>
+            <p className="!normal-case">b1mo4kbar@gmail.com</p>
+            <p>jakarta, indonesia - 13790</p>
         </div>
 
         <div className="box">

@@ -26,8 +26,8 @@ const orderPage = () => {
               Jalan Jengki Gang Sahabat No.6, RT.1/RW.2, Kebon, Makasar, KOTA
               JAKARTA TIMUR - MAKASAR, DKI JAKARTA, ID 13650
             </p>
-            <button className="px-2 py-2 border border-primary rounded-lg bg-[#192a56] hover:bg-[#27ae60] text-white">
-              Ubah
+            <button className="px-2 py-2 border border-primary rounded-lg bg-white hover:bg-[#27ae60] text-white">
+              
             </button>
           </div>
         </div>
